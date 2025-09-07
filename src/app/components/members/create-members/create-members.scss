@@ -1,0 +1,110 @@
+.removeBtn {
+    background: var(--cancel-btn-bg);
+    color: var(--cancel-btn-col);
+
+    &:hover {
+        background: var(--cancel-btn-bg);
+        color: var(--cancel-btn-col);
+    }
+}
+
+.formBtn button {
+    width: 10%;
+}
+
+@media (max-width: 992px) {
+    .memberForms {
+        padding-bottom: 60px !important;
+    }
+
+    .formBtn {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .formBtn button {
+        width: 40%;
+    }
+}
+
+@media (max-width: 576px) {
+    .memberForms {
+        padding-bottom: 60px !important;
+    }
+
+    .formBtn {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .formBtn button {
+        width: 45%;
+    }
+}
+
+.memberForm {
+    background-color: var(--primary-bg-col);
+    border-radius: 1.5rem;
+    box-shadow: var(--common-box-shadow);
+    border: 2px solid var(--border-col);
+
+    .formHeading {
+        border-bottom: 2px solid var(--border-col);
+
+        p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--label-col);
+        }
+    }
+
+    .familyMemberGroup {
+        background: var(--field-bg-col);
+        border-radius: 1rem;
+        border: 2px solid var(--border-col);
+
+        &:hover {
+            box-shadow: var(--common-box-shadow);
+            transform: translateY(-2px);
+        }
+    }
+
+    .familyMemberLabel {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--label-col);
+    }
+
+    /* -----------------------
+       RESPONSIVENESS
+       ----------------------- */
+
+    /* Tablet (≤ 992px) */
+    @media (max-width: 992px) {
+        .col-12.d-flex {
+            flex-direction: column !important;
+        }
+
+        .col-md-6,
+        .col-md-4 {
+            width: 100% !important;
+            padding-left: 0 !important;
+            margin-bottom: 1rem;
+        }
+    }
+
+    /* Mobile (≤ 576px) */
+    @media (max-width: 576px) {
+        padding: 1rem !important;
+
+        .familyMemberGroup {
+            padding: 1rem !important;
+        }
+
+        .familyMemberLabel {
+            font-size: 1rem;
+        }
+    }
+}

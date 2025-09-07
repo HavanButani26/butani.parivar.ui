@@ -1,0 +1,34 @@
+.nav-link {
+    color: var(--label-col);
+    font-weight: 500;
+
+    &:hover,
+    &:active,
+    &.active {
+        color: var(--hover-col);
+    }
+}
+
+.fixed-bottom {
+    .nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.85rem;
+        color: var(--label-col);
+
+        i {
+            font-size: 1.2rem;
+        }
+
+        &:hover,
+        &:active,
+        &.active {
+            color: var(--hover-col);
+        }
+    }
+}
+
+.navbarIcons {
+    color: var(--label-col);
+}

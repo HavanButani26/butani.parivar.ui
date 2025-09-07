@@ -1,0 +1,29 @@
+<div class="col-12 p-3 d-flex justify-content-end">
+    <button pButton label="Add Members" routerLink="/members/create"></button>
+</div>
+<div class="col-12 px-3">
+    <p-table [value]="members" rowGroupMode="subheader" sortField="village" sortMode="single" [scrollable]="true"
+        scrollHeight="400px" groupRowsBy="village">
+        <ng-template pTemplate="header">
+            <tr class="fw-bold">
+                <th>Name</th>
+                <th>district</th>
+                <th>contacts</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="groupheader" let-member>
+            <tr pRowGroupHeader class="fw-bold">
+                <td colspan="3">
+                    {{member.village}}
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-member let-rowIndex="rowIndex">
+            <tr>
+                <td>{{member.name}}</td>
+                <td>{{member.district}}</td>
+                <td>{{member.contact}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

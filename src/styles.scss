@@ -1,1 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --body-bg-col: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --label-col: #4a5568;
+    --hover-col: #667eea;
+    --button-col: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --button-hover-col: linear-gradient(135deg, #5a6fd8 0%, #6b4295 100%);
+    --button-text-col: white;
+    --primary-bg-col: #e0e7f5;
+    --border-col: #d1d9e6;
+    --common-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    --field-bg-col: #f8fafc;
+    --primary-text-col: rgb(40, 38, 38);
+    --cancel-btn-bg: #e2e8f0;
+    --cancel-btn-col: #4a5568;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background: var(--body-bg-col);
+    min-height: 100vh;
+    --p-button-primary-background: var(--button-col);
+    --p-button-primary-border-color: var(--button-col);
+    --p-button-primary-color: var(--button-text-col);
+    --p-button-primary-hover-background: var(--button-hover-col);
+    --p-button-primary-hover-border-color: var(--button-hover-col);
+    --p-button-primary-hover-color: var(--button-text-col);
+    --p-button-primary-active-background: var(--button-hover-col);
+    --p-button-primary-active-border-color: var(--button-hover-col);
+    --p-button-primary-active-color: var(--button-text-col);
+    --p-button-label-font-weight: 400;
+    --p-datatable-header-cell-background: var(--primary-bg-col);
+    --p-datatable-header-cell-color: var(--label-col);
+    --p-datatable-header-cell-border-color: var(--border-col);
+    --p-datatable-row-background: var(--primary-bg-col);
+    --p-datatable-row-color: var(--label-col);
+    --p-datatable-body-cell-border-color: var(--border-col);
+    --p-inputtext-background: var(--field-bg-col);
+    --p-inputtext-border-color: var(--border-col);
+    --p-inputtext-color: var(--primary-text-col);
+    --p-inputtext-focus-border-color: var(--hover-col);
+    --p-inputtext-hover-border-color: var(--hover-col);
+    --p-inputtext-invalid-border-color: var(--p-message-error-simple-color);
+    --p-textarea-background: var(--field-bg-col);
+    --p-textarea-border-color: var(--border-col);
+    --p-textarea-color: var(--primary-text-col);
+    --p-textarea-focus-border-color: var(--hover-col);
+    --p-textarea-hover-border-color: var(--hover-col);
+    --p-textarea-invalid-border-color: var(--p-message-error-simple-color);
+    --p-select-background: var(--field-bg-col);
+    --p-select-border-color: var(--border-col);
+    --p-select-color: var(--primary-text-col);
+    --p-select-focus-border-color: var(--hover-col);
+    --p-select-hover-border-color: var(--hover-col);
+    --p-select-invalid-border-color: var(--p-message-error-simple-color);
+    --p-select-overlay-background: var(--field-bg-col);
+    --p-select-overlay-border-color: var(--border-col);
+    --p-select-overlay-shadow: var(--common-box-shadow);
+    --p-select-option-color: var(--label-col);
+    --p-select-option-focus-background: var(--primary-bg-col);
+    --p-select-option-focus-color: var(--primary-text-col);
+    --p-select-option-selected-background: var(--primary-bg-col);
+    --p-select-option-selected-color: var(--primary-text-col);
+    --p-select-option-selected-focus-background: var(--primary-bg-col);
+    --p-select-option-selected-focus-color: var(--primary-text-col);
+}
+
+nav {
+    background: var(--body-bg-col);
+}
+
+.p-datatable-table-container {
+    border: 2px solid var(--border-col);
+    border-radius: 1rem;
+    box-shadow: var(--common-box-shadow);
+    background: var(--primary-bg-col);
+    padding: 0 1rem;
+}
+
+label {
+    color: var(--label-col);
+    font-weight: 500;
+}

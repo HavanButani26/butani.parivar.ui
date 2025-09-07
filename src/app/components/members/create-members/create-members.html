@@ -1,0 +1,182 @@
+<div class="col-12 p-3 d-flex">
+    <form #form="ngForm" [formGroup]="memberForm" (ngSubmit)="submitForm()" class="w-100 memberForms">
+        <div class="memberForm p-3">
+            <div class="col-12 formHeading">
+                <p>Personal Information</p>
+            </div>
+            <div class="col-12 my-2 d-flex">
+                <div class="col-md-6 d-flex flex-column">
+                    <label for="memberName" class="mb-2">Member Name</label>
+                    <input pInputText type="text" placeholder="Enter Member Name" formControlName="memberName"
+                        [invalid]="isInvalid('memberName')">
+                    @if (isInvalid('memberName')) {
+                    <p-message class="mt-1" severity="error" size="small" variant="simple">Member Name is
+                        Required.</p-message>
+                    }
+                </div>
+                <div class="col-md-6 ps-3 d-flex flex-column">
+                    <label for="mobileNo" class="mb-2">Mobile No.</label>
+                    <input pInputText type="text" placeholder="Enter Mobile No." formControlName="mobileNo"
+                        [invalid]="isInvalid('mobileNo')">
+                    @if (isInvalid('mobileNo')) {
+                    <p-message class="mt-1" severity="error" size="small" variant="simple">Mobile No. is
+                        Required.</p-message>
+                    }
+                </div>
+            </div>
+            <div class="col-12 mb-2 d-flex">
+                <div class="col-md-6 d-flex flex-column">
+                    <label for="homeAddress" class="mb-2">Home Address</label>
+                    <textarea pTextarea placeholder="Enter Address" formControlName="homeAddress" [autoResize]="true"
+                        [invalid]="isInvalid('homeAddress')"></textarea>
+                    @if (isInvalid('homeAddress')) {
+                    <p-message class="mt-1" severity="error" size="small" variant="simple">Address is
+                        Required.</p-message>
+                    }
+                </div>
+                <div class="col-md-6 ps-3 d-flex flex-column">
+                    <label for="businessAddress" class="mb-2">Business Address</label>
+                    <textarea pTextarea placeholder="Enter Address" formControlName="businessAddress"
+                        [autoResize]="true" [invalid]="isInvalid('businessAddress')"></textarea>
+                    @if (isInvalid('businessAddress')) {
+                    <p-message class="mt-1" severity="error" size="small" variant="simple">Address is
+                        Required.</p-message>
+                    }
+                </div>
+            </div>
+            <div class="col-12 mb-2 d-flex">
+                <div class="col-md-6 d-flex flex-column">
+                    <label for="homeMobileNo" class="mb-2">Mobile No.(Home)</label>
+                    <input pInputText type="text" placeholder="Enter Mobile No." formControlName="homeMobileNo"
+                        [invalid]="isInvalid('homeMobileNo')">
+                    @if (isInvalid('homeMobileNo')) {
+                    <p-message class="mt-1" severity="error" size="small" variant="simple">Mobile No. is
+                        Required.</p-message>
+                    }
+                </div>
+                <div class="col-md-6 ps-3 d-flex flex-column">
+                    <label for="village" class="mb-2">Village</label>
+                    <input pInputText type="text" placeholder="Enter Village" formControlName="village"
+                        [invalid]="isInvalid('village')">
+                    @if (isInvalid('village')) {
+                    <p-message class="mt-1" severity="error" size="small" variant="simple">Village is
+                        Required.</p-message>
+                    }
+                </div>
+            </div>
+            <div class="col-12 mb-2 d-flex">
+                <div class="col-md-6 d-flex flex-column">
+                    <label for="tehsil" class="mb-2">Tehsil</label>
+                    <input pInputText type="text" placeholder="Enter Tehsil" formControlName="tehsil"
+                        [invalid]="isInvalid('tehsil')">
+                    @if (isInvalid('tehsil')) {
+                    <p-message class="mt-1" severity="error" size="small" variant="simple">Tehsil is
+                        Required.</p-message>
+                    }
+                </div>
+                <div class="col-md-6 ps-3 d-flex flex-column">
+                    <label for="district" class="mb-2">District</label>
+                    <input pInputText type="text" placeholder="Enter District" formControlName="district"
+                        [invalid]="isInvalid('district')">
+                    @if (isInvalid('district')) {
+                    <p-message class="mt-1" severity="error" size="small" variant="simple">District is
+                        Required.</p-message>
+                    }
+                </div>
+            </div>
+            <div class="col-12 my-4 formHeading">
+                <p>Family Members</p>
+            </div>
+            <div class="col-12 mb-3 d-flex flex-column familyMemberForm" formArrayName="familyMembers">
+                @for (fm of familyMembers.controls; let i = $index; track fm) {
+                <div class="col-12 d-flex flex-column p-3 mb-3 familyMemberGroup" [formGroupName]="i">
+                    <div class="col-12 mb-2 d-flex justify-content-between">
+                        <p class="familyMemberLabel">Family Member {{ i + 1 }}</p>
+                        <button pButton type="button" label="Remove Member" icon="pi pi-minus"
+                            (click)="removeFamilyMember(i)" class="removeBtn"></button>
+                    </div>
+                    <div class="col-12 d-flex mb-2">
+                        <div class="col-md-4 d-flex flex-column">
+                            <label for="familyMemberName" class="mb-2">Family Member Name</label>
+                            <input pInputText type="text" placeholder="Enter Name" formControlName="familyMemberName"
+                                [invalid]="isInvalid('familyMemberName', fm)">
+                            @if (isInvalid('familyMemberName', fm)) {
+                            <p-message class="mt-1" severity="error" size="small" variant="simple">Family Member Name is
+                                Required.</p-message>
+                            }
+                        </div>
+                        <div class="col-md-4 d-flex flex-column ps-3">
+                            <label for="relation" class="mb-2">Relation</label>
+                            <input pInputText type="text" placeholder="Enter Relation" formControlName="relation"
+                                [invalid]="isInvalid('relation', fm)">
+                            @if (isInvalid('relation', fm)) {
+                            <p-message class="mt-1" severity="error" size="small" variant="simple">Relation is
+                                Required.</p-message>
+                            }
+                        </div>
+                        <div class="col-md-4 d-flex flex-column ps-3">
+                            <label for="birthDate" class="mb-2">Date of Birth</label>
+                            <p-datePicker formControlName="birthDate" placeholder="Enter Date of Birth"
+                                [invalid]="isInvalid('birthDate', fm)"></p-datePicker>
+                            @if (isInvalid('birthDate', fm)) {
+                            <p-message class="mt-1" severity="error" size="small" variant="simple">Date of Birth is
+                                Required.</p-message>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex mb-2">
+                        <div class="col-md-4 d-flex flex-column">
+                            <label for="education" class="mb-2">Education</label>
+                            <input pInputText type="text" placeholder="Enter Education" formControlName="education"
+                                [invalid]="isInvalid('education', fm)">
+                            @if (isInvalid('education', fm)) {
+                            <p-message class="mt-1" severity="error" size="small" variant="simple">Education is
+                                Required.</p-message>
+                            }
+                        </div>
+                        <div class="col-md-4 d-flex flex-column ps-3">
+                            <label for="relationshipStatus" class="mb-2">Relationship Status</label>
+                            <p-select [options]="relationShipStatusOptions" optionLabel="label" optionValue="value"
+                                formControlName="relationshipStatus" placeholder="Select Status"
+                                [invalid]="isInvalid('relationshipStatus', fm)"></p-select>
+                            @if (isInvalid('relationshipStatus', fm)) {
+                            <p-message class="mt-1" severity="error" size="small" variant="simple">Relationship Status
+                                is
+                                Required.</p-message>
+                            }
+                        </div>
+                        <div class="col-md-4 d-flex flex-column ps-3">
+                            <label for="business" class="mb-2">Business</label>
+                            <input pInputText type="text" placeholder="Enter Business" formControlName="business"
+                                [invalid]="isInvalid('business', fm)">
+                            @if (isInvalid('business', fm)) {
+                            <p-message class="mt-1" severity="error" size="small" variant="simple">Business is
+                                Required.</p-message>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex mb-2">
+                        <div class="col-md-4 d-flex flex-column">
+                            <label for="bloodGroup" class="mb-2">Blood Group</label>
+                            <input pInputText type="text" placeholder="Enter Blood Group" formControlName="bloodGroup"
+                                [invalid]="isInvalid('bloodGroup', fm)">
+                            @if (isInvalid('bloodGroup', fm)) {
+                            <p-message class="mt-1" severity="error" size="small" variant="simple">Blood Group is
+                                Required.</p-message>
+                            }
+                        </div>
+                    </div>
+                </div>
+                }
+                <div class="col-12 d-flex mb-2 justify-content-center">
+                    <button pButton type="button" label="Add Member" icon="pi pi-plus"
+                        (click)="addFamilyMember()"></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 d-flex gap-3 my-3 justify-content-center formBtn">
+            <button pButton type="submit" label="Save"></button>
+            <button pButton type="reset" label="Reset" class="removeBtn" (click)="resetForm()"></button>
+        </div>
+    </form>
+</div>

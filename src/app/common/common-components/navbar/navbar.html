@@ -1,0 +1,56 @@
+<!-- Desktop Navbar -->
+<nav class="navbar navbar-expand-lg d-none d-lg-flex justify-content-between align-items-center shadow-sm px-4">
+    <!-- Left: Logo + Menu -->
+    <div class="d-flex align-items-center gap-4">
+        <img src="logo.svg" alt="LOGO" width="40" height="40">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+            <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/members" routerLinkActive="active">Members</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/details/result" routerLinkActive="active">Details</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" routerLink="/contacts" routerLinkActive="active">Contacts</a></li>
+        </ul>
+    </div>
+
+    <!-- Right: Icons -->
+    <div class="d-flex align-items-center gap-3 navbarIcons">
+        <i class="pi pi-bell fs-5 cursor-pointer"></i>
+        <i class="pi pi-user fs-5 cursor-pointer"></i>
+    </div>
+</nav>
+
+<!-- Tablet/Mobile Navbar -->
+<!-- Top Navbar -->
+<nav class="navbar d-lg-none shadow-sm px-3 d-flex justify-content-between align-items-center">
+    <img src="logo.svg" alt="LOGO" width="40px">
+    <div class="d-flex align-items-center gap-3 navbarIcons">
+        <i class="pi pi-bell fs-5 cursor-pointer"></i>
+        <i class="pi pi-user fs-5 cursor-pointer"></i>
+    </div>
+</nav>
+
+<!-- Bottom Navbar -->
+<nav class="navbar fixed-bottom d-lg-none shadow-sm border-top">
+    <ul class="navbar-nav w-100 d-flex flex-row justify-content-around">
+        <li class="nav-item text-center">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="pi pi-home"></i>
+                <div>Home</div>
+            </a>
+        </li>
+        <li class="nav-item text-center">
+            <a class="nav-link" routerLink="/members" routerLinkActive="active"><i class="pi pi-users"></i>
+                <div>Members</div>
+            </a>
+        </li>
+        <li class="nav-item text-center">
+            <a class="nav-link" routerLink="/details/result" routerLinkActive="active"><i class="pi pi-info-circle"></i>
+                <div>Details</div>
+            </a>
+        </li>
+        <li class="nav-item text-center">
+            <a class="nav-link" routerLink="/contacts" routerLinkActive="active"><i class="pi pi-phone"></i>
+                <div>Contacts</div>
+            </a>
+        </li>
+    </ul>
+</nav>
